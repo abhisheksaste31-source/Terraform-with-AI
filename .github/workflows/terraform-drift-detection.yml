@@ -28,9 +28,8 @@ jobs:
         run: |
           $PYTHON_BIN -m pip install --user openai requests
 
-      - name: Terraform init
-        run: terraform init -backend-config=$BACKEND_CONFIG
-
+      - name: Terraform Init
+        run: terraform init -input=false
       - name: Terraform drift plan
         shell: bash
         run: |

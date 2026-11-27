@@ -1,5 +1,9 @@
 terraform {
-  required_version = ">= 1.5.0, < 2.0.0"
-
-  backend "s3" {}
+  backend "s3" {
+    bucket       = "reyaz-terraform-state-prod-0603"
+    key          = "production/terraform.tfstate"
+    region       = "ap-south-1"
+    encrypt      = true
+    use_lockfile = true
+  }
 }
